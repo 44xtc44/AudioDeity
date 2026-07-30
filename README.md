@@ -142,4 +142,4 @@ Sanitize div.innerHtml when needed.<br>
 
 ## Git tag history
 
-- prototype-v1
+- prototype-v1 "prototype has only mocks"
