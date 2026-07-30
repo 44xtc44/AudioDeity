@@ -133,3 +133,13 @@ Only allowed in **[SVG icons](www.w3.org/2000/svg)**.<br>
 No test ever may call an internet URL.<br>
 No network calls outside **localhost**.<br>
 Sanitize div.innerHtml when needed.<br>
+
+## Architectural Design Decisions (MVP)
+
+- **Decoupled Architecture:** View layers (BEM elements) do not directly mutate data or trigger sibling logic. They exclusively emit intent payloads to the centralized `AppStore`.
+- **Async Boundary Layer:** All asynchronous actions targeting IndexedDB are completely separated via `IPlaylistService` interfaces to guarantee pure code testability without infrastructure footprints.
+- **Future-Proofing for Angular:** The application implements a centralized single-source-of-truth runtime cache mechanism that creates an exact functional parallel to an Angular RxJS stream topology.
+
+## Git tag history
+
+- prototype-v1
