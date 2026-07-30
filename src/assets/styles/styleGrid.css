@@ -1,0 +1,48 @@
+.app__container {
+  position: relative;
+  display: grid;
+  /* Vertikale Aufteilung: Header (auto), Buttons (auto), Playlist füllt den Rest (1fr) */
+  grid-template-rows: auto auto 1fr; 
+  /* Only one column, full width. Else we can suffer from gaps between grid-members. */
+  grid-template-columns: 1fr; 
+  
+  /* Die strikte 40rem Begrenzung */
+  max-width: 40rem;
+  width: 100%;
+  height: 100vh; /* Erzwingt, dass die App genau so hoch wie der Bildschirm ist */
+  margin: 0 auto; /* Zentriert die gesamte App horizontal auf dem Desktop */
+  
+  background-color: var(--color-bg, #121212); /* Verhindert weiße Blitzer */
+  overflow: hidden; /* Verhindert, dass die gesamte App scrollt */
+}
+
+/* ######################################################### */
+/* .app__header,  until canvas tests are done */
+/* ######################################################### */
+.app__header,
+.app__playlist
+.app__controls {
+  height: 100%;
+  width: 100%;
+  background: #cbd5e1;
+}
+
+.app__playlist {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr);
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* Default colors. */
+.app__controls {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(77, 6, 7, 1),
+    rgba(18, 18, 18, 1)
+  );
+}
+.app__playlist {
+  background-color: #121212;
+}

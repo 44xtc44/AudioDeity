@@ -1,0 +1,114 @@
+/* ==========================================================================
+   ⚠️ TEMPORÄRE TEST-STYLES (Entfernen, sobald Canvas/Logo fertig sind)
+   ========================================================================== */
+
+/* Standard-Styles für Desktop und Hochformat (Portrait) */
+.app__header {
+  width: 100%;
+  overflow: hidden;
+
+  width: 100%;
+  height: 200px; /* Deine definierte Standardhöhe */
+  opacity: 1;
+  visibility: visible;
+  transition:
+    height 0.3s ease,
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+
+  background-image: linear-gradient(
+    to bottom,
+    rgba(208, 56, 64),
+    rgba(101, 0, 1)
+  );
+}
+
+/**
+ * @layout Mobile Landscape Collapse
+ * @description Blendet den Header komplett aus, wenn das Smartphone im Querformat liegt,
+ *              um vertikalen Platz für die Playlist freizugeben.
+ *              Begrenzt auf Geräte mit einer maximalen Höhe von 450px (typische Handys).
+ */
+@media screen and (orientation: landscape) and (max-height: 450px) {
+  .app__header {
+    height: 0px; /* Grid-Zeile kollabiert auf 0 */
+    opacity: 0; /* Verhindert visuelles Flackern während des Übergangs */
+    visibility: hidden; /* Entfernt das Element aus dem Barrierefreiheits-Tree */
+    padding: 0; /* Sicherstellen, dass keine Abstände übrig bleiben */
+    margin: 0;
+  }
+}
+
+.app__header-stack {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* ALLE Kinder müssen exakt die gleiche Größe haben und am Nullpunkt (oben links) starten */
+.app__logo,
+.box-canvas,
+.app__header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box; /* Verhindert Verzerrung durch Padding/Border */
+}
+
+/* --- Layer-Zuständigkeiten (z-index) --- */
+.app__logo {
+  z-index: 1;
+  /* background: rgba(0, 123, 255, 0.5); */
+}
+#app__canvas-bg {
+  z-index: 2;
+  /* background: rgba(40, 167, 69, 0.4); */
+}
+#app__canvas-effects {
+  z-index: 3;
+  /* background: rgba(255, 193, 7, 0.3); */
+}
+.app__header-overlay {
+  z-index: 4;
+  /* background: rgba(0, 0, 0, 0.2); */
+} /* Leicht abgedunkeltes Overlay */
+
+/* 
+ * FIX FÜR DEN TEST-MODUS: 
+ * Die ::after-Texte dürfen keinen Platz im Layout einnehmen, 
+ * sonst drücken sie die Canvas-Elemente weg!
+ */
+.app__logo::after,
+#app__canvas-bg::after,
+#app__canvas-effects::after,
+.app__header-overlay::after {
+  position: absolute;
+  left: 10px;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 0.85rem;
+  text-shadow: 1px 1px 2px black;
+}
+
+.app__logo::after {
+  /* content: "Ebene 1: Logo"; */
+  top: 10px;
+}
+#app__canvas-bg::after {
+  /* content: "Ebene 2: Canvas BG"; */
+  top: 35px;
+}
+#app__canvas-effects::after {
+  /* content: "Ebene 3: Canvas Effects"; */
+  top: 60px;
+}
+.app__header-overlay::after {
+  /* content: "Ebene 4: Overlay (Oben)"; */
+  top: 85px;
+}
+
+#header-logo.is-hidden {
+  visibility: hidden;
+}

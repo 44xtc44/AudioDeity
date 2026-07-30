@@ -1,0 +1,45 @@
+/* Der Tooltip-Text (unverändert aus dem vorherigen Schritt) */
+.icon-button::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 135%; /* Leicht angehoben für Platz für den Pfeil */
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.15s ease-out;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Das NEUE Dreieck (Pfeil nach unten) */
+.icon-button::before {
+  content: '';
+  position: absolute;
+  bottom: 115%; /* Sitzt exakt zwischen Icon und Text-Box */
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  
+  /* CSS-Trick für ein Dreieck: Drei transparente Seiten, die obere ist farbig */
+  border-width: 6px 6px 0 6px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.9) transparent transparent transparent;
+  
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.15s ease-out;
+}
+
+/* HOVER & LONG-PRESS: Aktiviert Text-Box UND Dreieck gleichzeitig */
+.icon-button:hover::after,
+.icon-button.show-tooltip::after,
+.icon-button:hover::before,
+.icon-button.show-tooltip::before {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}

@@ -1,0 +1,73 @@
+/* Base container holding the overlay and content */
+.app__bottom-sheet {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Keeps the sheet pinned to the bottom */
+  pointer-events: none; /* Prevents hidden overlay from blocking clicks */
+  z-index: 999;
+}
+
+/* Semitransparent background mask */
+.sheet-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+
+  /* Modern Blur-Effect (iOS/Android-Systems) */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px); /* Safari Support */
+}
+
+/* The panel containing your options */
+.sheet-content {
+  position: relative;
+
+  width: 100%; 
+  max-width: 100%;
+  
+  background: #ffffff;
+  max-width: 100%;
+  max-height: 80vh; /* Prevents overflow on short phone screens */
+  border-radius: 16px 16px 0 0; /* Rounded top corners like native iOS/Android */
+  padding: 20px;
+  box-sizing: border-box;
+
+  /* Critical Performance Properties: */
+  transform: translateY(100%); /* Hides panel off-screen */
+  will-change: transform; /* Signals GPU rendering optimization */
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1); /* Custom ease-out curve */
+}
+
+/* Drag handle mimicry (UI best practice) */
+.sheet-handle {
+  width: 40px;
+  height: 5px;
+  background: #ccc;
+  border-radius: 3px;
+  margin: 0 auto 15px auto;
+}
+
+/* ----------------------------------
+   ACTIVE STATES (Triggered on click)
+---------------------------------- */
+.app__bottom-sheet.is-active {
+  pointer-events: auto; /* Reactivates click capabilities */
+}
+
+.app__bottom-sheet.is-active .sheet-overlay {
+  opacity: 1;
+}
+
+.app__bottom-sheet.is-active .sheet-content {
+  transform: translateY(0); /* Slides up perfectly into position */
+}

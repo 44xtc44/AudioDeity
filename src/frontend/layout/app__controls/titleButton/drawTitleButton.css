@@ -1,0 +1,11 @@
+/* 2. SVG Scaling Rules. Parent styles in buttonBar.css */
+.app__title-bar-icon {
+  width: 100%;
+  height: auto;
+  max-width: 24px; /* Limits size on desktop */
+  min-width: 22px; /* Prevents it looking too small on mobile */
+}
+
+#CurrentTitleBtn {
+  font-size:large;
+}

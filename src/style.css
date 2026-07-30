@@ -1,0 +1,134 @@
+/* ==========================================================================
+   1. GLOBAL SAFETY & MAIN-LAYOUT (at first in the project)
+   ========================================================================== */
+:root {
+  --btn-text: rgba(235, 230, 210, 0.9); /* Dirty Cream */
+  --big-play-btn: rgba(92, 255, 103, .9); /* Lemon Lime #5cff67 */
+  --background: #f8f9fa; /* around the app */
+  --app__playlist-item: grey;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; /* prevent shaking of page */
+  box-sizing: border-box;
+
+  font-family: Roboto, sans-serif;
+  color: var(--btn-text);
+  background: var(--background);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --btn-text: rgba(235, 230, 210, 0.7); /* Dirty Cream */
+    --big-play-btn: rgba(0, 250, 154, 0.7); /* Guppie Green */
+    --background: #1b1b1b;
+    --app__playlist-item: coral;
+  }
+  img {
+    /* Dims the image, but with fully opaque. */
+    filter: brightness(0.7);
+  }
+}
+
+.app__playlist-card {
+  height: 100%;
+  max-height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.app__playlist-list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 100%;
+  min-height: 0;
+  overflow-y: auto; /* scroll here only */
+  scroll-behavior: smooth;
+  margin: 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ==========================================================================
+   DESIGN A: STANDARD-VIEW LIST (big / Desktop)
+   ========================================================================== */
+.app__playlist-item-wrapper {
+  position: relative;
+  overflow: hidden;
+  margin: 6px 5px; /* Großzügiger Abstand */
+  background-color: #dc2626;
+  border-radius: 4px;
+  flex-shrink: 0;
+
+  align-items: center;
+  width: 100%;
+}
+
+.app__playlist-item {
+  margin: 0 !important;
+  position: relative;
+  z-index: 2;
+  background: #181818;
+  padding: 10px 12px; /* Viel Platz für Mausklicks */
+  transition: transform 0.2s ease-out;
+  cursor: grab;
+  width: 100%;
+  box-sizing: border-box;
+
+  color: var(--app__playlist-item);
+}
+@media (prefers-color-scheme: dark) {
+  .app__playlist-item {
+    color: var(--app__playlist-item);
+  }
+}
+.app__playlist-item h4 {
+  font-size: 1rem;
+  margin: 0 0 4px 0;
+}
+
+.app__playlist-item p {
+  font-size: 0.85rem;
+  margin: 0;
+  color: #6b7280;
+}
+
+/* ==========================================================================
+   DESIGN B: COMPACT LIST (toggle via .is-compact)
+   ========================================================================== */
+/* Wenn die Klasse am .app__playlist-list aktiv ist, greifen diese kompakteren Regeln */
+.app__playlist-list.is-compact .app__playlist-item-wrapper {
+  margin: 2px 4px; /* Extrem flach */
+  border-radius: 3px;
+}
+
+.app__playlist-list.is-compact .app__playlist-item {
+  padding: 4px 8px; /* Minimales Padding */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.app__playlist-list.is-compact .app__playlist-item h4 {
+  font-size: 0.85rem;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+}
+
+.app__playlist-list.is-compact .app__playlist-item p {
+  font-size: 0.75rem;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: right;
+}
