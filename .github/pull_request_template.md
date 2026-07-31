@@ -1,4 +1,6 @@
-## 📝 Description
+# Pull request template
+
+## Description
 
 <!-- Clear and concise description of what this PR changes or introduces. -->
 
