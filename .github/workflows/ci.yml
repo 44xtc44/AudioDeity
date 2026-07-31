@@ -2,9 +2,9 @@ name: Continuous Integration
 
 on:
   pull_request:
-    branches: [ main ] # Runs when someone opens a PR to merge into main
+    branches: [main]
   push:
-    branches: [ main, dev ] # Runs automatically when you push directly to main or dev
+    branches: [main, dev]
 
 jobs:
   lint-and-test:
@@ -17,7 +17,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-level: '20' # Change to match your preferred Node version
+          node-version: '20'
           cache: 'npm'
 
       - name: Install dependencies
@@ -29,6 +29,9 @@ jobs:
       - name: Lint code (ESLint)
         run: npm run lint
 
-      # Uncomment the block below if you have unit tests set up!
+      # 🛡️ NEW: Automated Security Scan Step
+      - name: Run dependency security audit
+        run: npm audit --audit-level=high
+
       # - name: Run unit tests
       #   run: npm test
