@@ -4,7 +4,7 @@
 
 - [→ Architecture](./architecture.md) specifies what the system is composed of and how parts interact (the "blueprint").
 - [→ Design](./design.md) bridges the gap, detailing how specific components are structured internally.
-- [→ Implementation](./implementation.md)  is the execution of these designs, where the abstract models are translated into functional code.
+- [→ Implementation](./implementation.md) is the execution of these designs, where the abstract models are translated into functional code.
 
 ## Implementation order to MVP
 
@@ -78,18 +78,18 @@ Next code block is the project component structure. Do not modify it, just analy
 ```bash
 Layout tree:
 app (global main component) directory mirror /src
-└── app__container                      
-    ├── app__header                     
-    │   └── app__header-stack      
-    │       ├── app__logo               
-    │       ├── app__canvas-bg     
+└── app__container
+    ├── app__header
+    │   └── app__header-stack
+    │       ├── app__logo
+    │       ├── app__canvas-bg
     │       ├── app__canvas-effects
     │       └── app__header-overlay
     │
-    ├── app__controls                   
-    │   └── app__controls-grid                 
-    │       ├── app__menu-panel         
-    │       │   └── app__menu-bar  
+    ├── app__controls
+    │   └── app__controls-grid
+    │       ├── app__menu-panel
+    │       │   └── app__menu-bar
     │       │       ├── app__btn app__btn--play (with task/state-modifier)
     │       │       ├── app__btn app__btn--skip
     │       │       ├── app__btn app__btn--top
@@ -97,8 +97,8 @@ app (global main component) directory mirror /src
     │       │       ├── app__btn app__btn--menu
     │       │       └── app__btn app__btn--audio
     │       │
-    │       └── app__title-panel         
-    │           └── app__title-bar  
+    │       └── app__title-panel
+    │           └── app__title-bar
     │               ├── app__btn app__btn--hashtag
     │               ├── app__btn app__btn--current
     │               ├── app__btn app__btn--edit
@@ -106,9 +106,9 @@ app (global main component) directory mirror /src
     │               ├── app__btn app__btn--repeat
     │               └── app__btn app__btn--density
     │
-    ├── app__playlist                    
-    │   └── app__playlist-card           
-    │       └── app__playlist-list       
+    ├── app__playlist
+    │   └── app__playlist-card
+    │       └── app__playlist-list
     │           ├── app__playlist-item-wrapper
     │           │    └── app__playlist-item
     │           └── app__playlist-item-wrapper
@@ -182,7 +182,7 @@ git push -u origin dev --tags # without --tags push disposes the tag
 
 ### Git add/commit
 
-To remedy common mistakes, here some commands to roll back local  and  mistakes.
+To remedy common mistakes, here some commands to roll back local and mistakes.
 
 - git add
 

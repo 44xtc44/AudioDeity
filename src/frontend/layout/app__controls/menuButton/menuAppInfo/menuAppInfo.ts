@@ -1,7 +1,7 @@
-import "./menuAppInfo.css";
-import { toggleBottomSheets } from "../../../app__bottom-sheet/app__bottomSheet";
+import './menuAppInfo.css';
+import { toggleBottomSheets } from '../../../app__bottom-sheet/app__bottomSheet';
 
-const gridMember = ["RepoBtn", "FooterBtn", "LicenseBtn"];
+const gridMember = ['RepoBtn', 'FooterBtn', 'LicenseBtn'];
 
 export function appFooter(): void {
   footerGrid();
@@ -9,9 +9,9 @@ export function appFooter(): void {
 }
 
 export function menuAppInfo(): void {
-  const btn = document.getElementById("InfoButton") as HTMLDivElement;
+  const btn = document.getElementById('InfoButton') as HTMLDivElement;
   if (btn) {
-    btn.addEventListener("click", () => {
+    btn.addEventListener('click', () => {
       showMenu();
       footerGrid();
       footerLinks();
@@ -21,15 +21,15 @@ export function menuAppInfo(): void {
 }
 
 function showMenu(): void {
-  const anchor = document.getElementById("sheets-anchor");
+  const anchor = document.getElementById('sheets-anchor');
   if (anchor) {
-    const container = document.createElement("div") as HTMLDivElement;
-    container.id = "menu-app-info";
-    container.classList.add("menu-app-info");
-    container.style.backgroundColor = "#FFFAFA";
+    const container = document.createElement('div') as HTMLDivElement;
+    container.id = 'menu-app-info';
+    container.classList.add('menu-app-info');
+    container.style.backgroundColor = '#FFFAFA';
 
-    const heading = document.createElement("h4");
-    heading.innerText = "App Info";
+    const heading = document.createElement('h4');
+    heading.innerText = 'App Info';
     container.appendChild(heading);
 
     anchor.appendChild(container);
@@ -37,14 +37,14 @@ function showMenu(): void {
 }
 
 function footerGrid(): void {
-  const box = document.getElementById("menu-app-info") as HTMLDivElement;
+  const box = document.getElementById('menu-app-info') as HTMLDivElement;
   if (box) {
-    const gridParent = document.createElement("div");
-    gridParent.id = "Footer";
+    const gridParent = document.createElement('div');
+    gridParent.id = 'Footer';
     box.appendChild(gridParent);
 
     for (const btnName of gridMember) {
-      const btn = document.createElement("div") as HTMLDivElement;
+      const btn = document.createElement('div') as HTMLDivElement;
       btn.id = btnName;
       gridParent.appendChild(btn);
     }
@@ -52,19 +52,19 @@ function footerGrid(): void {
 }
 
 function footerLinks(): void {
-  const repo = document.getElementById("RepoBtn") as HTMLDivElement;
-  const repoLlink = document.createElement("a");
+  const repo = document.getElementById('RepoBtn') as HTMLDivElement;
+  const repoLlink = document.createElement('a');
   repo.appendChild(repoLlink);
-  repoLlink.id = "RepoLink";
-  repoLlink.classList.add("button-link-icon");
-  repoLlink.type = "text/javascript";
-  repoLlink.innerText = "GitHub Repository";
-  repoLlink.addEventListener("click", () => {
+  repoLlink.id = 'RepoLink';
+  repoLlink.classList.add('button-link-icon');
+  repoLlink.type = 'text/javascript';
+  repoLlink.innerText = 'GitHub Repository';
+  repoLlink.addEventListener('click', () => {
     /* LINK TO GITHUB REPO */
   });
 
-  const lic = document.getElementById("LicenseBtn") as HTMLDivElement;
-  const licTxt = document.createElement("p");
-  licTxt.innerText = "Apache 2.0 license";
+  const lic = document.getElementById('LicenseBtn') as HTMLDivElement;
+  const licTxt = document.createElement('p');
+  licTxt.innerText = 'Apache 2.0 license';
   lic.appendChild(licTxt);
 }

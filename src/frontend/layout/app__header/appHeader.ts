@@ -13,7 +13,7 @@
  * 4. .app__header-overlay    [z-index: 4] -> UI-Texte, Filter oder Abdunklungen
  */
 
-import "./appHeader.css";
+import './appHeader.css';
 
 /**
  * Header has a container to host stacked logo and overlay canvas.
@@ -26,7 +26,7 @@ import "./appHeader.css";
  * @returns {void}
  */
 export function appHeader(): void {
-  const header = document.getElementById("app__header") as HTMLDivElement;
+  const header = document.getElementById('app__header') as HTMLDivElement;
   if (!header) return;
 
   const stack = stackContainer(header);
@@ -38,44 +38,44 @@ export function appHeader(): void {
 }
 
 function stackContainer(appHeader: HTMLDivElement): HTMLDivElement {
-  const stack = document.createElement("div") as HTMLDivElement;
-  stack.id = "app__header-stack";
-  stack.classList.add("app__header-stack");
+  const stack = document.createElement('div') as HTMLDivElement;
+  stack.id = 'app__header-stack';
+  stack.classList.add('app__header-stack');
   appHeader.appendChild(stack);
   return stack;
 }
 
 function logoContainer(parent: HTMLDivElement): HTMLDivElement {
-  const logo = document.createElement("div") as HTMLDivElement;
-  logo.id = "app__logo";
-  logo.classList.add("app__logo");
-  const imgLight = document.createElement("img");
+  const logo = document.createElement('div') as HTMLDivElement;
+  logo.id = 'app__logo';
+  logo.classList.add('app__logo');
+  const imgLight = document.createElement('img');
   logo.appendChild(imgLight);
-  imgLight.id = "header-logo"; // light-mode
-  imgLight.src = "./src/assets/images/logo_audiodeity.svg";
-  imgLight.alt = "AudioDeity Logo for light mode";
+  imgLight.id = 'header-logo'; // light-mode
+  imgLight.src = './src/assets/images/logo_audiodeity.svg';
+  imgLight.alt = 'AudioDeity Logo for light mode';
   parent.appendChild(logo);
   return logo;
 }
 
 function canvasBg(parent: HTMLDivElement): void {
-  const canvas = document.createElement("canvas") as HTMLCanvasElement;
-  canvas.id = "app__canvas-bg";
-  canvas.classList.add("box-canvas");
+  const canvas = document.createElement('canvas') as HTMLCanvasElement;
+  canvas.id = 'app__canvas-bg';
+  canvas.classList.add('box-canvas');
   parent.appendChild(canvas);
 }
 
 function canvasEffects(parent: HTMLDivElement): void {
-  const canvas = document.createElement("canvas") as HTMLCanvasElement;
-  canvas.id = "app__canvas-effects";
-  canvas.classList.add("box-canvas");
+  const canvas = document.createElement('canvas') as HTMLCanvasElement;
+  canvas.id = 'app__canvas-effects';
+  canvas.classList.add('box-canvas');
   parent.appendChild(canvas);
 }
 
 function headerOverlay(parent: HTMLDivElement): void {
-  const overlay = document.createElement("div") as HTMLDivElement;
-  overlay.id = "app__header-overlay";
-  overlay.classList.add("app__header-overlay");
+  const overlay = document.createElement('div') as HTMLDivElement;
+  overlay.id = 'app__header-overlay';
+  overlay.classList.add('app__header-overlay');
   parent.appendChild(overlay);
 }
 
@@ -83,8 +83,8 @@ function headerOverlay(parent: HTMLDivElement): void {
  * Hide logo for canvas animation.
  */
 export function toggleHeaderLogo(visible: boolean): void {
-  const logo = document.getElementById("header-logo");
+  const logo = document.getElementById('header-logo');
   if (logo) {
-    logo.classList.toggle("is-hidden", !visible);
+    logo.classList.toggle('is-hidden', !visible);
   }
 }

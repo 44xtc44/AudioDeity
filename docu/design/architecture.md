@@ -4,7 +4,7 @@
 
 - [→ Architecture](./architecture.md) specifies what the system is composed of and how parts interact (the "blueprint").
 - [→ Design](./design.md) bridges the gap, detailing how specific components are structured internally.
-- [→ Implementation](./implementation.md)  is the execution of these designs, where the abstract models are translated into functional code.
+- [→ Implementation](./implementation.md) is the execution of these designs, where the abstract models are translated into functional code.
 
 ## Audience
 
@@ -57,7 +57,7 @@ graph TD
     classDef secure fill:#ffebee,stroke:#e53935,stroke-width:2px,stroke-dasharray: 5 5,color:#000;
 
     subgraph Security_Sandbox ["Localhost Sandbox Boundary"]
-        
+
         subgraph UI_Layer ["Presentation Layer"]
             UI_Header["Header Display"]:::ui
             UI_Buttons["Button Bar"]:::ui
@@ -99,7 +99,7 @@ graph TD
     EQ --> CanvasVis
 
     Store <--> ServiceIF
-    
+
     ServiceIF <--> DB
     DB --> Stores
 

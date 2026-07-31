@@ -9,8 +9,8 @@
 .app__controls-grid {
   display: grid;
   grid-template-rows: auto auto; /* Zwei Zeilen untereinander */
-  grid-template-columns: 1fr;    /* Nutzt die vollen 40rem */
-  gap: var(--spacing-md, 1rem);  /* Abstand zwischen Menü- und Titelzeile */
+  grid-template-columns: 1fr; /* Nutzt die vollen 40rem */
+  gap: var(--spacing-md, 1rem); /* Abstand zwischen Menü- und Titelzeile */
   padding: 1rem;
   box-sizing: border-box;
 }
@@ -25,7 +25,7 @@
 .app__menu-bar {
   display: grid;
   /* v1: 5 Buttons. repeat(5, 1fr) erzwingt, dass jeder Button exakt gleich breit ist */
-  grid-template-columns: repeat(5, 1fr); 
+  grid-template-columns: repeat(5, 1fr);
   gap: var(--spacing-sm, 0.5rem);
   align-items: center;
 }

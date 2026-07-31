@@ -4,7 +4,7 @@
 
 - [→ Architecture](./architecture.md) specifies what the system is composed of and how parts interact (the "blueprint").
 - [→ Design](./design.md) bridges the gap, detailing how specific components are structured internally.
-- [→ Implementation](./implementation.md)  is the execution of these designs, where the abstract models are translated into functional code.
+- [→ Implementation](./implementation.md) is the execution of these designs, where the abstract models are translated into functional code.
 
 ## Project setup
 

@@ -13,7 +13,7 @@ export function menuPlaylistShow(): void {
 
 function showMenu(): void {
   const anchor = document.getElementById('sheets-anchor');
-  console.log("-> menuPlaylistShow", anchor)
+  console.log('-> menuPlaylistShow', anchor);
   if (anchor) {
     const container = document.createElement('div') as HTMLDivElement;
     const heading = document.createElement('h4');

@@ -27,15 +27,15 @@ Das Hauptlayout wird über ein 3-stufiges CSS-Grid gesteuert. Das `app__bottom-s
 
 ## 2. Detaillierte Layout-Matrix & Zuständigkeiten
 
-| HTML Element Class  | CSS Typ              | Datei-Pfad                                                    | Layout-Zweck / Verhalten                                                                            |
-| :------------------ | :------------------- | :------------------------------------------------------------ | :-------------------------------------------------------------------------------------------------- |
-| `.app__container`    | **Grid**             | `src/frontend/layout/app__header/appHeader.css` (bzw. zentral) | Teilt die App vertikal auf: `header` (auto), `buttons` (auto), `playlist` (`1fr` füllt den Rest).   |
-| `.app__header-stack`     | **Relative/Z-Index** | `src/frontend/layout/app__header/appHeader.css`                | Stapelt Logo, Canvas und Overlay übereinander.                                                      |
-| `.app__controls-grid` | **Grid**             | `src/frontend/layout/app__controls/appButtons.css`              | Teilt den Raum horizontal/vertikal zwischen `.app__menu-panel` und `.title-container`.               |
-| `.app__menu-bar`         | **Grid**             | `src/frontend/layout/app__controls/menuButton/menuBar.css`      | Richtet die Steuerungstasten (`Play`, `Skip`, `Add`, etc.) in einer gleichmäßigen Raster-Reihe aus. |
-| `.app__title-bar`        | **Grid**             | `src/frontend/layout/app__controls/titleButton/titleBar.css`    | Richtet die Track-Metadaten und Ansichts-Optionen aus.                                              |
-| `.app__playlist-list`   | **Flexbox**          | `src/frontend/layout/app__playlist/appPlaylist.css`            | `flex-direction: column`. Stapelt Playlist-Einträge vertikal.                                       |
-| `.app__bottom-sheet`     | **Fixed**            | `src/frontend/layout/app__bottom-sheet/bottomSheet.css`            | Nutzt `position: fixed` und `bottom: 0`, um sich über das Haupt-Grid zu legen.                      |
+| HTML Element Class    | CSS Typ              | Datei-Pfad                                                     | Layout-Zweck / Verhalten                                                                            |
+| :-------------------- | :------------------- | :------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------- |
+| `.app__container`     | **Grid**             | `src/frontend/layout/app__header/appHeader.css` (bzw. zentral) | Teilt die App vertikal auf: `header` (auto), `buttons` (auto), `playlist` (`1fr` füllt den Rest).   |
+| `.app__header-stack`  | **Relative/Z-Index** | `src/frontend/layout/app__header/appHeader.css`                | Stapelt Logo, Canvas und Overlay übereinander.                                                      |
+| `.app__controls-grid` | **Grid**             | `src/frontend/layout/app__controls/appButtons.css`             | Teilt den Raum horizontal/vertikal zwischen `.app__menu-panel` und `.title-container`.              |
+| `.app__menu-bar`      | **Grid**             | `src/frontend/layout/app__controls/menuButton/menuBar.css`     | Richtet die Steuerungstasten (`Play`, `Skip`, `Add`, etc.) in einer gleichmäßigen Raster-Reihe aus. |
+| `.app__title-bar`     | **Grid**             | `src/frontend/layout/app__controls/titleButton/titleBar.css`   | Richtet die Track-Metadaten und Ansichts-Optionen aus.                                              |
+| `.app__playlist-list` | **Flexbox**          | `src/frontend/layout/app__playlist/appPlaylist.css`            | `flex-direction: column`. Stapelt Playlist-Einträge vertikal.                                       |
+| `.app__bottom-sheet`  | **Fixed**            | `src/frontend/layout/app__bottom-sheet/bottomSheet.css`        | Nutzt `position: fixed` und `bottom: 0`, um sich über das Haupt-Grid zu legen.                      |
 
 ---
 

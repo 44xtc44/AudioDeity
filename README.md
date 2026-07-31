@@ -1,17 +1,17 @@
 # Project: AudioDeity
 
 <!--
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/YOUR_USERNAME/YOUR_REPO/tree/main/examples/my-example)   
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/YOUR_USERNAME/YOUR_REPO/tree/main/examples/my-example)
 
 check running in the sandbox, for user msg
 "App is running in a sandbox on StackBlitz. Please use the 'Load DEV Media' button."
-const isStackBlitz = window.location.hostname.endsWith('stackblitz.io') || 
+const isStackBlitz = window.location.hostname.endsWith('stackblitz.io') ||
                      window.location.hostname.endsWith('webcontainer.io');
 
 if (isStackBlitz) {
   console.log('Running in StackBlitz');
   // Display your message here
-}   
+}
 -->
 
 <!-- CopyChar.cc or Symbl.cc, search for "arrow," and copy the symbol directly --->

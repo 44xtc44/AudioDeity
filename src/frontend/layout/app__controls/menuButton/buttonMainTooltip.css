@@ -14,7 +14,7 @@
   opacity: 0;
   pointer-events: none;
   transition: all 0.15s ease-out;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Das NEUE Dreieck (Pfeil nach unten) */
@@ -24,12 +24,12 @@
   bottom: 115%; /* Sitzt exakt zwischen Icon und Text-Box */
   left: 50%;
   transform: translateX(-50%) scale(0.8);
-  
+
   /* CSS-Trick für ein Dreieck: Drei transparente Seiten, die obere ist farbig */
   border-width: 6px 6px 0 6px;
   border-style: solid;
   border-color: rgba(0, 0, 0, 0.9) transparent transparent transparent;
-  
+
   opacity: 0;
   pointer-events: none;
   transition: all 0.15s ease-out;

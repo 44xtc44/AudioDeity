@@ -1,5 +1,5 @@
-import "./drawButton.css";
-import { buttonXML } from "../buttonSVGs";
+import './drawButton.css';
+import { buttonXML } from '../buttonSVGs';
 
 interface btnConf {
   buttonClass: Array<string>;
@@ -27,12 +27,12 @@ export function initButtonBarBtns(): void {
 function drawButton(btn: btnConf): void {
   const parent = document.getElementById(btn.parentDivId) as HTMLDivElement;
   if (parent) {
-    const clicker = document.createElement("div");
+    const clicker = document.createElement('div');
     clicker.id = btn.buttonId;
     for (const className of btn.buttonClass) {
       clicker.classList.add(className);
     }
-    clicker.setAttribute("data-tooltip", btn.toolTip);
+    clicker.setAttribute('data-tooltip', btn.toolTip);
     parent.appendChild(clicker);
 
     clicker.innerHTML = btn.svgXML;
@@ -46,11 +46,11 @@ function drawButton(btn: btnConf): void {
  */
 export function playButton(): void {
   drawButton({
-    buttonClass: ["icon-button-large"],
-    parentDivId: "PlayButton",
-    buttonId: "PlayButton-icon",
+    buttonClass: ['icon-button-large'],
+    parentDivId: 'PlayButton',
+    buttonId: 'PlayButton-icon',
     svgXML: buttonXML.playBtn,
-    toolTip: "Play",
+    toolTip: 'Play',
   });
 }
 
@@ -61,21 +61,21 @@ export function playButton(): void {
  */
 export function pauseButton(): void {
   drawButton({
-    buttonClass: ["icon-button-large"],
-    parentDivId: "PlayButton",
-    buttonId: "PauseButton-icon",
+    buttonClass: ['icon-button-large'],
+    parentDivId: 'PlayButton',
+    buttonId: 'PauseButton-icon',
     svgXML: buttonXML.pauseBtn,
-    toolTip: "Pause",
+    toolTip: 'Pause',
   });
 }
 
 function skipButton(): void {
   drawButton({
-    buttonClass: ["icon-button"],
-    parentDivId: "SkipForwardButton",
-    buttonId: "SkipForwardButton-icon",
+    buttonClass: ['icon-button'],
+    parentDivId: 'SkipForwardButton',
+    buttonId: 'SkipForwardButton-icon',
     svgXML: buttonXML.testBtn,
-    toolTip: "Skip Next",
+    toolTip: 'Skip Next',
   });
 }
 
@@ -93,40 +93,40 @@ function toTopButton(): void {
 
 function addButton(): void {
   drawButton({
-    buttonClass: ["icon-button"],
-    parentDivId: "AddButton",
-    buttonId: "AddButton-icon",
+    buttonClass: ['icon-button'],
+    parentDivId: 'AddButton',
+    buttonId: 'AddButton-icon',
     svgXML: buttonXML.addBtn,
-    toolTip: "New Playlist",
+    toolTip: 'New Playlist',
   });
 }
 
 function menuButton(): void {
   drawButton({
-    buttonClass: ["icon-button"],
-    parentDivId: "MenuButton",
-    buttonId: "MenuButton-icon",
+    buttonClass: ['icon-button'],
+    parentDivId: 'MenuButton',
+    buttonId: 'MenuButton-icon',
     svgXML: buttonXML.menuBtn,
-    toolTip: "Playlists",
+    toolTip: 'Playlists',
   });
 }
 
 function audioButton(): void {
   drawButton({
-    buttonClass: ["icon-button"],
-    parentDivId: "AudioButton",
-    buttonId: "AudioButton-icon",
+    buttonClass: ['icon-button'],
+    parentDivId: 'AudioButton',
+    buttonId: 'AudioButton-icon',
     svgXML: buttonXML.audioBtn,
-    toolTip: "Audio Menu",
+    toolTip: 'Audio Menu',
   });
 }
 
 function infoButton(): void {
   drawButton({
-    buttonClass: ["icon-button"],
-    parentDivId: "InfoButton",
-    buttonId: "InfoButton-icon",
+    buttonClass: ['icon-button'],
+    parentDivId: 'InfoButton',
+    buttonId: 'InfoButton-icon',
     svgXML: buttonXML.infoBtn,
-    toolTip: "App Info",
+    toolTip: 'App Info',
   });
 }

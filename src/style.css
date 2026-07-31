@@ -3,7 +3,7 @@
    ========================================================================== */
 :root {
   --btn-text: rgba(235, 230, 210, 0.9); /* Dirty Cream */
-  --big-play-btn: rgba(92, 255, 103, .9); /* Lemon Lime #5cff67 */
+  --big-play-btn: rgba(92, 255, 103, 0.9); /* Lemon Lime #5cff67 */
   --background: #f8f9fa; /* around the app */
   --app__playlist-item: grey;
 }

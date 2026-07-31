@@ -1,14 +1,14 @@
-import "./titleBar.css";
+import './titleBar.css';
 
-import { initTitleBarBtns } from "./drawTitleButton";
+import { initTitleBarBtns } from './drawTitleButton';
 
 const gridMember = [
-  "HashTagBtn",
-  "CurrentTitleBtn",
-  "EditPlaylistBtn",
-  "ShuffleBtn",
-  "RepeatBtn",
-  "ListDensityBtn",
+  'HashTagBtn',
+  'CurrentTitleBtn',
+  'EditPlaylistBtn',
+  'ShuffleBtn',
+  'RepeatBtn',
+  'ListDensityBtn',
 ];
 
 /**
@@ -23,19 +23,19 @@ export function titleBar(titleBox: HTMLDivElement): void {
 }
 
 function gridContainer(parent: HTMLDivElement): HTMLDivElement {
-  const titleBar = document.createElement("div");
-  titleBar.id = "app__title-bar";
-  titleBar.classList.add("app__title-bar");
+  const titleBar = document.createElement('div');
+  titleBar.id = 'app__title-bar';
+  titleBar.classList.add('app__title-bar');
   parent.appendChild(titleBar);
 
   for (const btnName of gridMember) {
-    const btn = document.createElement("div") as HTMLDivElement;
+    const btn = document.createElement('div') as HTMLDivElement;
     btn.id = btnName;
     titleBar.appendChild(btn);
   }
 
   // The only text in the title bar.
-  const title = document.getElementById("CurrentTitleBtn") as HTMLDivElement;
-  title.innerText = "Title";
+  const title = document.getElementById('CurrentTitleBtn') as HTMLDivElement;
+  title.innerText = 'Title';
   return titleBar;
 }

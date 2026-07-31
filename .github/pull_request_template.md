@@ -1,12 +1,14 @@
 ## 📝 Description
 
 <!-- Clear and concise description of what this PR changes or introduces. -->
-- **What is the goal?** 
-- **What changed?** 
+
+- **What is the goal?**
+- **What changed?**
 
 ## 🎯 Type of Change
 
 <!-- Please delete options that are not relevant. -->
+
 - [ ] 🚀 Feature (non-breaking change which adds functionality)
 - [ ] 🐛 Bug fix (non-breaking change which fixes an issue)
 - [ ] 🎨 Refactor / Code Quality (improving structure, styling, or documentation)
@@ -23,6 +25,7 @@
 ## 🧪 How Has This Been Tested?
 
 <!-- Describe the tests that you ran to verify your changes. Include instructions so we can reproduce. -->
+
 - [ ] **Unit Tests:** Run command `[Insert your test command here, e.g., npm test / pytest]`
 - [ ] **Manual Testing:** Verified the UI layout / API response locally on browser/Postman.
 
@@ -30,6 +33,6 @@
 
 <!-- Add screenshots or screen recordings showing the feature or fix in action to make review easier. -->
 
-| Before | After |
-| :--- | :--- |
-| *Image/GIF* | *Image/GIF* |
+| Before      | After       |
+| :---------- | :---------- |
+| _Image/GIF_ | _Image/GIF_ |
