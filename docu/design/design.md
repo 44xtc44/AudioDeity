@@ -73,9 +73,7 @@ The browser will accept any name, also a "destroyed" string.
 
 ## Directory and layout
 
-The `/src/` directory is a mirror of the component layout 'Layout tree'<br>
-The `/tests/src/` directory is a mirror of the c`/src/` directory.<br>
-Next code block is the project structure. Do not modify it, just analyze it.<br>
+Next code block is the project component structure. Do not modify it, just analyze it.<br>
 
 ```bash
 Layout tree:
@@ -200,4 +198,3 @@ git add .
 git commit -m "foo bar" # fire
 git reset --soft HEAD~1 # reset to one commit before AND unstages files; no files deleted
 ```
-

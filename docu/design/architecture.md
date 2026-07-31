@@ -8,7 +8,7 @@
 
 ## Audience
 
-The primary target audience will be FireFox **mobile** browser add-on users.
+The primary audience will be FireFox **mobile** browser add-on users.
 
 ## Product
 
@@ -45,74 +45,7 @@ Vanilla **TypeScript** project using **Vite framework** (vanilla-ts template) wi
 - The project uses **pre-commit hooks** for linting and formatting.
 - No optimization without discussion
 
-## Directory and layout
-
-The `/src/` directory is a mirror of the component **layout tree**.<br>
-The `/tests/src/` directory is a mirror of the c`/src/` directory.<br>
-
-**Layout tree** and **key directories** are depicted in the [→ design document](./design.md).
-
-## Documentation
-
-A README.md must be present in each of the subdirectories (components) if a major change was made.<br>
-Use Markdown language and organize it in small informational blocks.<br>
-
-## Security
-
-- Check the project folders in `./src` for internet URLs and report the caller.<br>
-- Only allowed in **[SVG icons](www.w3.org/2000/svg)**.<br>
-- No test ever may call an internet URL.<br>
-- No network calls outside **localhost**.<br>
-- Sanitize div.innerHtml when needed.<br>
-
-## Architectural Design Decisions
-
-The predecessor project was a bit messy. CommonJS has only a single global namespace.<br>
-Changes to the core component code led also to multiple updates of UI code.
-
-We use ESM modules and break down the project into smaller tasks using a Work Breakdown Structure (WBS).
-
-### UI Layout development
-
-- **Mandatory:** Header Display, Button Bar, Playlist View.
-- The UI is available as **vector graphic** [→ Inkscape vector graphic](./docu_ui_layout_02.svg).
-
-### Prototype
-
-- **Prototype is non-functional** with layout mocks.
-- **"Responsive Design Mode"** perfect fits all available devices
-- **"Rotate viewport"** (landscape) leads to the collapse of the header on small displays, showing only button bar and playlist
-- **System Hardware** light/dark-mode change leads to UI response
-
-### MVP - Minimum Viable Product
-
-- **Decoupled Architecture:** View layers (BEM elements) do not directly mutate data or trigger sibling logic. They exclusively emit intent payloads to the centralized `AppStore`.
-- **Async Boundary Layer:** All asynchronous actions targeting IndexedDB are completely separated via `IPlaylistService` interfaces to guarantee pure code testability without infrastructure footprints.
-- **Future-Proofing for Angular:** The application implements a centralized single-source-of-truth runtime cache mechanism that creates an exact functional parallel to an Angular RxJS stream topology.
-
-### Alpha release
-
-- **First User feedback:** Upload as FireFox test section add-on.
-- **Negative feedback:** We like the most and must be answered quick and polite.
-- **Improve the product:** Use feedback.
-
-### Stable release
-
-- All core functionality of the "Playlist Booster" project is implemented
-- The 10 band Equalizer has only simple preset buttons (10 sliders don't fit on mobiles)
-
-### Second release
-
-- Visualizer "butterchurn" (Winamp milkdrop clone) NPM package is implemented
-- A Five band equalizer UI menu for mobile user is added, with at least one custom preset save option
-
-### Database
-
-- Single Database (AudioDeityDB) containing multiple Object Stores (which act like tables in relational databases).
-
-## Git tag history
-
-- Git tags are used to mark major development milestones.
+## Architecture Overview Diagram
 
 ```mermaid
 graph TD
@@ -175,3 +108,74 @@ graph TD
     style Security_Sandbox fill:#fafafa,stroke:#333,stroke-width:2px;
 
 ```
+
+## Directory and layout
+
+Core and service module are located under `/src/frontend/`.<br>
+The `/src/frontend/layout/` directory is a mirror of the **component layout tree**.
+
+The `/tests/src/frontend/` mirrors `/src/frontend/`.
+
+**Layout tree** and **key directories** are depicted in the [→ design document](./design.md).
+
+## Documentation
+
+A README.md must be present in each of the subdirectories (components) if a major change was made.<br>
+Use Markdown language and organize it in small informational blocks.
+
+## Security
+
+- Check the project folders in `/src/` for internet URLs and report the caller.
+- Only allowed in **[SVG icons](www.w3.org/2000/svg)**.
+- No test ever may call an internet URL.
+- No network calls outside **localhost**.
+- Sanitize div.innerHtml when needed.
+
+## Architectural Design Decisions
+
+The predecessor project was a bit messy. CommonJS has only a single global namespace.<br>
+Changes to the core component code led also to multiple updates of UI code.
+
+We use ESM modules and break down the project into smaller tasks using a Work Breakdown Structure (WBS).
+
+### UI Layout development
+
+- **Mandatory:** Header Display, Button Bar, Playlist View.
+- The UI is available as **vector graphic** [→ Inkscape vector graphic](./docu_ui_layout_02.svg).
+
+### Prototype
+
+- **Prototype is non-functional** with layout mocks.
+- **"Responsive Design Mode"** perfect fits all available devices
+- **"Rotate viewport"** (landscape) leads to the collapse of the header on small displays, showing only button bar and playlist
+- **System Hardware** light/dark-mode change leads to UI response
+
+### MVP - Minimum Viable Product
+
+- **Decoupled Architecture:** View layers (BEM elements) do not directly mutate data or trigger sibling logic. They exclusively emit intent payloads to the centralized `AppStore`.
+- **Async Boundary Layer:** All asynchronous actions targeting IndexedDB are completely separated via `IPlaylistService` interfaces to guarantee pure code testability without infrastructure footprints.
+- **Future-Proofing for Angular:** The application implements a centralized single-source-of-truth runtime cache mechanism that creates an exact functional parallel to an Angular RxJS stream topology.
+
+### Alpha release
+
+- **First User feedback:** Upload as FireFox test section add-on.
+- **Negative feedback:** We like the most and must be answered quick and polite.
+- **Improve the product:** Use feedback.
+
+### Stable release
+
+- All core functionality of the "Playlist Booster" project is implemented
+- The 10 band Equalizer has only simple preset buttons (10 sliders don't fit on mobiles)
+
+### Second release
+
+- Visualizer "butterchurn" (Winamp milkdrop clone) NPM package is implemented
+- A Five band equalizer UI menu for mobile user is added, with at least one custom preset save option
+
+### Database
+
+- Single Database (AudioDeityDB) containing multiple Object Stores (which act like tables in relational databases).
+
+## Git tag history
+
+- Git tags are used to mark major development milestones.
