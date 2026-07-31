@@ -1,0 +1,6 @@
+{"rule":"WHITESPACE_RULE","sentence":"^\\Q📦 AudioDeityDB (Single Connection Instance) ┣ 📂 app_settings      --> Key-Value store for volume, equalizer presets, etc. ┣ 📂 playlists         --> Stores complete playlist metadata and structure.\\E$"}
+{"rule":"ARROWS","sentence":"^\\Q📦 AudioDeityDB (Single Connection Instance) ┣ 📂 app_settings      --> Key-Value store for volume, equalizer presets, etc. ┣ 📂 playlists         --> Stores complete playlist metadata and structure.\\E$"}
+{"rule":"WHITESPACE_RULE","sentence":"^\\Q┗ 📂 tracks            --> Stores the actual File Blobs, decoupled from playlists.\\E$"}
+{"rule":"ARROWS","sentence":"^\\Q┗ 📂 tracks            --> Stores the actual File Blobs, decoupled from playlists.\\E$"}
+{"rule":"ID_CASING","sentence":"^\\QThis allows the user to alter the playlist name later { id:UUID, name: foo }.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qgit add\\E$"}

@@ -11,3 +11,7 @@ CommonJS
 camelCase
 xmlns
 butterchurn
+AudioDeityDB
+onupgradeneeded
+behaviour
+milkdrop

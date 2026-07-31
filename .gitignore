@@ -1,8 +1,13 @@
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudio,visualstudiocode,eclipse,intellij,webstorm,node
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudio,visualstudiocode,eclipse,intellij,webstorm,node
 
+temp/
 public/
-docu/
+### allow only design ###
+**/docu/*
+!**docu/design/
+###
+
 .claude/
 
 ### Eclipse ###
