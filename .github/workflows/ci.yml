@@ -2,9 +2,9 @@ name: Continuous Integration
 
 on:
   pull_request:
-    branches: [ main, playground ]
+    branches: [ main ] # Runs when someone opens a PR to merge into main
   push:
-    branches: [ main ]
+    branches: [ main, dev ] # Runs automatically when you push directly to main or dev
 
 jobs:
   lint-and-test:
