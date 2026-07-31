@@ -72,7 +72,7 @@ export function toggleBottomSheets() {
     const hasClass = sheet.classList.contains('is-active');
     if (!hasClass) {
       setTimeout(() => {
-        clearAnchor();
+        clearAnchor()
       }, 300);
     }
   }
@@ -85,6 +85,10 @@ export function toggleBottomSheets() {
 export function clearAnchor() {
   const anchor = document.getElementById('sheets-anchor') as HTMLDivElement;
   if (anchor) {
-    anchor.innerHTML = '';
+    anchor.innerHTML = ''
   }
 }
+
+
+
+
