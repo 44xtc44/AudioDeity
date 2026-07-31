@@ -1,0 +1,206 @@
+.playlist-bar {
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+
+  /* NEU: Zwingt die Playlist, sich strikt an die Grenzen ihrer Grid-Zelle zu halten */
+  max-height: 100%;
+}
+
+.app__playlist-card {
+  height: 100%;
+  max-height: 100%; /* Verhindert, dass die Card größer wird als die Playlist-Bar */
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* scroll area */
+.app__playlist-list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 100%;
+  min-height: 0;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+
+  /* WICHTIG: Falls hier noch ein Außenabstand definiert ist, der alles verschiebt */
+  margin: 0;
+}
+
+.app__playlist-item {
+  margin: 0 !important; /* Kein Außenabstand hier, das macht der Wrapper */
+  position: relative;
+  z-index: 2;
+  background: #eee; /* Grauer Hintergrund des Elements */
+  padding: 10px; /* 6px 10px; or 10px Ihr ursprüngliches Padding für den Text-Inhalt */
+  transition: transform 0.2s ease-out;
+  cursor: grab;
+  width: 100%; /* Nutzt die volle Breite des Wrappers */
+  box-sizing: border-box; /* Schließt das Padding in die Breite ein */
+
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.app__playlist-item-dense {
+  margin: 0 !important; /* Kein Außenabstand hier, das macht der Wrapper */
+  position: relative;
+  z-index: 2;
+  background: #eee; /* Grauer Hintergrund des Elements */
+  padding: 4px 8p; /* 6px 10px; or 10px Ihr ursprüngliches Padding für den Text-Inhalt */
+  transition: transform 0.2s ease-out;
+  cursor: grab;
+  width: 100%; /* Nutzt die volle Breite des Wrappers */
+  box-sizing: border-box; /* Schließt das Padding in die Breite ein */
+
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.app__playlist-item h4 {
+  font-size: 0.95rem; /* Leicht verkleinert für besseren Platz */
+  margin: 0 0 2px 0; /* Entfernt den großen Standard-Browser-Margin (nur noch 2px Platz nach unten) */
+  line-height: 1.2;
+}
+
+.app__playlist-item-dense h4 {
+  font-size: 0.85rem; /* Kompakte, gut lesbare Größe */
+  margin: 0; /* Kein Abstand */
+  line-height: 1.1;
+  white-space: nowrap; /* Verhindert Zeilenumbruch beim Titel */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Zeigt "..." bei zu langen Titeln */
+  flex-shrink: 0;
+}
+
+.app__playlist-item p {
+  font-size: 0.8rem; /* Subtext etwas kleiner machen */
+  margin: 0; /* Entfernt jeglichen Standard-Browser-Abstand */
+  line-height: 1.2;
+}
+
+.app__playlist-item-dense p {
+  font-size: 0.75rem; /* Kleinstmögliche lesbare Schriftgröße */
+  margin: 0; /* Kein Abstand */
+  line-height: 1.1;
+  color: #6b7280; /* Leicht ausgegraut für bessere Hierarchie */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Zeigt "..." bei zu langem Text */
+  text-align: right;
+}
+.app__playlist-item-wrapper {
+  position: relative;
+  overflow: hidden;
+  margin: 5px; /* 3px 5px; or 5px */
+  background-color: #dc2626; /* Hintergrund für den Swipe-Button */
+  border-radius: 4px;
+
+  /* Diese Eigenschaften halten die Liste stabil über dem App-Footer: */
+  flex-shrink: 0; /* Verhindert das unkontrollierte Ausdehnen */
+  width: auto; /* Passt sich dem Container an */
+}
+
+.app__playlist-item-wrapper-dense {
+  position: relative;
+  overflow: hidden;
+  margin: 2px 4px; /* 3px 5px; or 5px */
+  background-color: #dc2626; /* Hintergrund für den Swipe-Button */
+  border-radius: 4px;
+
+  /* Diese Eigenschaften halten die Liste stabil über dem App-Footer: */
+  flex-shrink: 0; /* Verhindert das unkontrollierte Ausdehnen */
+  width: auto; /* Passt sich dem Container an */
+}
+
+/* Der versteckte Button hinter dem Eintrag */
+.app__playlist-item__swipe-action {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 0.875rem;
+  z-index: 1;
+}
+
+/* Zustand, wenn das Element nach links gewischt wurde */
+.app__playlist-item.is-swiped {
+  transform: translateX(
+    -80px
+  ); /* Verschiebt den Inhalt um die Breite des Buttons */
+}
+
+.list-footer {
+  flex-shrink: 0;
+  min-height: 50px; /* Nutzt min-height statt height, um flexibler mit Padding zu arbeiten */
+  padding: 2rem 1rem; /* Drückt das Listenende effektiv weiter nach oben */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.875rem;
+  color: #9ca3af;
+  margin-top: 15px;
+}
+
+/* Scrollbar-Styling */
+.app__playlist-list::-webkit-scrollbar {
+  width: 6px;
+}
+.app__playlist-list::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 3px;
+}
+
+/* 1. Die Einblend-Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Diese Klasse wird neuen Listenelementen gegeben */
+.app__playlist-item.fade-in {
+  animation: fadeInUp 0.3s ease-out forwards;
+}
+
+/* 2. Der aktive Playlist-Eintrag */
+.app__playlist-item.is-active {
+  background: #3b82f6 !important; /* Blaue Hervorhebung (Beispiel) */
+  color: white;
+  border-left: 4px solid #1d4ed8;
+  font-weight: bold;
+}
+
+/* 3. Optimierung für mobile Geräte */
+@media (max-width: 768px) {
+  .app__playlist-list {
+    -webkit-overflow-scrolling: touch; /* Butterweiches Scrollen auf iOS */
+    scrollbar-width: none; /* Versteckt Standard-Scrollbar auf Firefox Mobile */
+  }
+
+  .app__playlist-list::-webkit-scrollbar {
+    display: none; /* Versteckt Scrollbar auf Chrome/Safari Mobile */
+  }
+
+  .app__playlist-item {
+    padding: 15px 10px; /* Größere Klickfläche für Finger auf dem Handy */
+    margin: 8px 5px;
+  }
+}

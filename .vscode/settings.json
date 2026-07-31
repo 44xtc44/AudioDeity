@@ -1,0 +1,41 @@
+{
+  "markdownlint.config": {
+    "MD033": {
+      "allowed_elements": [
+        "kbd",
+        "span",
+        "details",
+        "summary",
+        "br",
+        "p",
+        "ul",
+        "li",
+        "a",
+        "```"
+      ]
+    }
+  },
+  // Schaltet das Standard-Formatierungstool von VS Code aus
+  "editor.formatOnSave": true,
+
+  // Setzt Prettier als Standard-Formatter für alle Dateien
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // Spezifische Zuweisung für JavaScript und TypeScript
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // ESLint so konfigurieren, dass es beim Speichern Auto-Fixes ausführt
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
+  // Stellt sicher, dass das neue ESLint Flat-Config-Format genutzt wird
+  "eslint.useFlatConfig": true,
+
+  "eslint.validate": ["javascript", "typescript"]
+}
