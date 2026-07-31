@@ -83,6 +83,7 @@ export function toggleBottomSheets() {
  * Attached container will be destroyed and garbage collected.
  */
 export function clearAnchor() {
+  console.log('-> in clear anchor');
   const anchor = document.getElementById('sheets-anchor') as HTMLDivElement;
   if (anchor) {
     anchor.innerHTML = '';
