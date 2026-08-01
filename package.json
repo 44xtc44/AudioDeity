@@ -12,7 +12,10 @@
     "build:extension": "cross-env BUILD_TARGET=extension vite build",
     "build:all": "npm run build:npm && npm run build:extension",
     "lint": "eslint . --ignore-pattern '**/bundle/**'",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test": "playwright test",
+    "test:unit": "playwright test --grep @unit",
+    "test:e2e": "playwright test --grep @e2e"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

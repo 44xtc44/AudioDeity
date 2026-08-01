@@ -44,6 +44,46 @@ At least the project logo to go to GitHub Repository.
 - Adapt workflow, so only full tests run on pull request to /main branch.<br>
   Means workflow: on: ... [main]
 
+Only run unit tests like so, npx playwright test --project=unit<br>
+
+playwright.config.ts
+
+```TypeScript
+import { defineConfig } from '@playwright/test';
+
+export default defineConfig({
+  projects: [
+    {
+      name: 'unit',
+      testDir: './tests/unit', // Only looks in this folder
+      // Optional: Run without browser for pure logic tests
+      use: { browserName: 'chromium' },
+    },
+    {
+      name: 'e2e',
+      testDir: './tests/e2e',
+      use: { browserName: 'chromium' },
+    },
+  ],
+});
+```
+
+Test file with **@unit**, so Playwright can **grep** the string.
+
+```TypeScript
+import { test, expect } from '@playwright/test';
+
+test('should calculate sum @unit', async () => {
+  // Unit test logic
+  expect(1 + 1).toBe(2);
+});
+
+test('should login via UI @e2e', async ({ page }) => {
+  // E2E logic
+  await page.goto('/login');
+});
+```
+
 ## Buttons
 
 ## Database
