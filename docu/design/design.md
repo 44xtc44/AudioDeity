@@ -73,6 +73,12 @@ The browser will accept any name, also a "destroyed" string.
 
 ## Directory and layout
 
+Core and service module are located under `/src/frontend/`.<br>
+The `/src/frontend/layout/` directory is a mirror of the **component layout tree**.
+
+- `/tests/e2e/` holds end-to-end tests.
+- `/tests/unit/src/frontend/` mirrors `/src/frontend/`.<br>
+
 Next code block is the project component structure. Do not modify it, just analyze it.<br>
 
 ```bash

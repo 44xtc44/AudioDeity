@@ -189,11 +189,6 @@ graph TD
 
 ## Directory and layout
 
-Core and service module are located under `/src/frontend/`.<br>
-The `/src/frontend/layout/` directory is a mirror of the **component layout tree**.
-
-The `/tests/src/frontend/` mirrors `/src/frontend/`.
-
 **Layout tree** and **key directories** are depicted in the [→ design document](./design.md).
 
 ## Documentation
