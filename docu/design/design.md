@@ -136,9 +136,9 @@ app (global main component) directory mirror /src
 
 - `./src/frontend/core/` core logic (services) like IndexedDB, crud functions, equalizer. Video to canvas, ...
 - `./src/frontend/state/` App state. DB Store selected, Equalizer settings.
-- `./<project name>/tests/src/frontend/layout/` quick fail layout
-- `./<project name>/tests/src/frontend/core/` quick fail for Dependency Injections (DI)
-- `./<project name>/tests/e2e/` long-running UI tests
+
+- `./tests/unit/` quick fail tests
+- `./tests/e2e/` long-running UI tests
 
 ## Documentation
 
