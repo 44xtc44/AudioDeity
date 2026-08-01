@@ -1,3 +1,81 @@
+---
+version: alpha
+name: Modern SaaS Dashboard
+description: A clean, high-density design system for data-intensive applications
+colors:
+  primary: '#2563EB'
+  primary-hover: '#1D4ED8'
+  secondary: '#64748B'
+  tertiary: '#10B981'
+  neutral-50: '#F8FAFC'
+  neutral-100: '#F1F5F9'
+  neutral-900: '#0F172A'
+  success: '#22C55E'
+  error: '#EF4444'
+  warning: '#F59E0B'
+typography:
+  display:
+    fontFamily: Inter
+    fontSize: 48px
+    fontWeight: 700
+    lineHeight: 1.1
+    letterSpacing: -0.02em
+  h1:
+    fontFamily: Inter
+    fontSize: 36px
+    fontWeight: 600
+    lineHeight: 1.2
+    letterSpacing: -0.01em
+  h2:
+    fontFamily: Inter
+    fontSize: 24px
+    fontWeight: 600
+    lineHeight: 1.3
+  body-md:
+    fontFamily: Inter
+    fontSize: 16px
+    fontWeight: 400
+    lineHeight: 1.6
+  label-sm:
+    fontFamily: Inter
+    fontSize: 12px
+    fontWeight: 500
+    lineHeight: 1.4
+    textTransform: uppercase
+    letterSpacing: 0.05em
+spacing:
+  xs: 4px
+  sm: 8px
+  md: 16px
+  lg: 24px
+  xl: 32px
+  xxl: 48px
+rounded:
+  sm: 4px
+  md: 8px
+  lg: 12px
+  full: 9999px
+components:
+  button-primary:
+    backgroundColor: '{colors.primary}'
+    textColor: '#FFFFFF'
+    borderRadius: '{rounded.md}'
+    padding: '{spacing.sm} {spacing.md}'
+    typography: '{typography.label-sm}'
+  button-secondary:
+    backgroundColor: 'transparent'
+    textColor: '{colors.secondary}'
+    borderRadius: '{rounded.md}'
+    border: '1px solid {colors.secondary}'
+    padding: '{spacing.sm} {spacing.md}'
+    typography: '{typography.label-sm}'
+  card:
+    backgroundColor: '{colors.neutral-50}'
+    borderRadius: '{rounded.lg}'
+    padding: '{spacing.lg}'
+    shadow: '0 1px 3px rgba(0,0,0,0.1)'
+---
+
 # Project architecture
 
 [↑ Go back to README.md](../../README.md)

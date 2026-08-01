@@ -40,6 +40,10 @@ At least the project logo to go to GitHub Repository.
 
 ## Tests
 
+- Run only Unit Tests via workflow to save build time
+- Adapt workflow, so only full tests run on pull request to /main branch.<br>
+  Means workflow: on: ... [main]
+
 ## Buttons
 
 ## Database
@@ -75,3 +79,6 @@ At least the project logo to go to GitHub Repository.
 ## Equalizer
 
 ### Display on Audio Bottom-sheet
+
+Adding a concurrency block to GitHub Actions workflows enables the immediate cancellation of outdated jobs when new commits are pushed to the same branch or PR, directly conserving free build minutes. Implementing this configuration allows developers to manage workflow efficiency directly within their .github/workflows/ci.yml files, preventing redundant resource consumption. For detailed implementation steps, review the official documentation on the GitHub Blog.
+https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/control-workflow-concurrency

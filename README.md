@@ -1,6 +1,7 @@
 # Project: AudioDeity
 
 <!--
+
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/YOUR_USERNAME/YOUR_REPO/tree/main/examples/my-example)
 
 check running in the sandbox, for user msg
@@ -14,7 +15,7 @@ if (isStackBlitz) {
 }
 -->
 
-<!-- CopyChar.cc or Symbl.cc, search for "arrow," and copy the symbol directly --->
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/~/github.com/44xtc44/AudioDeity)
 
 Browser add-on **TypeScript** project using **Vite framework (vanilla-ts template)** with<br>
 **Playwright** for E2E and integration testing.
@@ -32,7 +33,7 @@ I filed a **[Bug report for FireFox mobile](https://github.com/44xtc44/Bug-FireF
 **Playlist Booster** (project v1) migration from **CommonJS to TypeScript** (project v2).<br>
 This will also allow bypassing the bug and solving cosmetic flaws on mobile displays.
 
-You can enjoy **Playlist Booster FireFox add-on also on mobiles**, by searching for "**playlist booster**".<br>
+You can enjoy **Playlist Booster FireFox add-on also on mobiles**, search **playlist booster**.<br>
 Version 2 will be migrated to Angular in version 3.
 
 ## Project documents
