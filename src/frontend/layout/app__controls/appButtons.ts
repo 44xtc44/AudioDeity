@@ -7,10 +7,8 @@ import { titleBar } from './titleButton/titleBar.js';
 
 /**
  * Nested grids.
- * 'app__controls' is anchor div for 'app__controls-grid' the parent-grid.
- * 'app__menu-panel' and 'title-container' are children.
- * Both children have also anchor divs to not set the children also grid-parent.
- * Means each children anchor holds a grid-parent for the button columns.
+ * 'app__controls' is parent of
+ * 'app__menu-panel' and 'app__title-panel'.
  * All buttons are inline SVGs downloaded from google.
  * @returns {void}
  */
@@ -20,32 +18,28 @@ export function appButtons(): void {
 
   // Grid that holds two rows for menu and title buttons.
   const [mainBar, titleHeaderBar] = buttonRows(parent);
+
   menuBar(mainBar);
   titleBar(titleHeaderBar);
 }
 
 /**
  * Grid construction for menu and title button bars.
- * 'app__controls-grid' is grid-parent for
+ * 'app__control' is grid-parent for
  * 'app__menu-panel' and 'app__title-panel'.
- * @param {HTMLDivElement} anchorDiv div
+ * @param {HTMLDivElement} parent div
  * @returns {Array<HTMLDivElement>} div array
  */
-function buttonRows(anchorDiv: HTMLDivElement): Array<HTMLDivElement> {
-  const gridParent = document.createElement('div') as HTMLDivElement;
-  gridParent.id = 'app__controls-grid';
-  gridParent.classList.add('app__controls-grid');
-  anchorDiv.appendChild(gridParent);
-
+function buttonRows(parent: HTMLDivElement): Array<HTMLDivElement> {
   const mainBtn = document.createElement('div') as HTMLDivElement;
   mainBtn.id = 'app__menu-panel';
   mainBtn.classList.add('app__menu-panel');
-  gridParent.appendChild(mainBtn);
+  parent.appendChild(mainBtn);
 
   const titleBtn = document.createElement('div') as HTMLDivElement;
   titleBtn.id = 'app__title-panel';
   titleBtn.classList.add('app__title-panel');
-  gridParent.appendChild(titleBtn);
+  parent.appendChild(titleBtn);
 
   return [mainBtn, titleBtn];
 }

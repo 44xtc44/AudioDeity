@@ -37,7 +37,7 @@ export function menuBar(mainBar: HTMLDivElement): void {
 }
 
 function gridContainer(parent: HTMLDivElement): void {
-  const menuBar = document.createElement('div') as HTMLDivElement;
+  const menuBar = document.createElement('div');
   menuBar.id = 'app__menu-bar';
   menuBar.classList.add('app__menu-bar');
   parent.appendChild(menuBar);
