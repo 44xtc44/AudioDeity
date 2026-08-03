@@ -83,7 +83,7 @@ Next code block is the project component structure. Do not modify it, just analy
 
 ```bash
 Layout tree:
-app (global main component) directory mirror /src
+app (global main component) directory mirror /src/frontend/layout/
 └── app__container
     ├── app__header
     │   └── app__header-stack
@@ -93,25 +93,24 @@ app (global main component) directory mirror /src
     │       └── app__header-overlay
     │
     ├── app__controls
-    │   └── app__controls-grid
-    │       ├── app__menu-panel
-    │       │   └── app__menu-bar
-    │       │       ├── app__btn app__btn--play (with task/state-modifier)
-    │       │       ├── app__btn app__btn--skip
-    │       │       ├── app__btn app__btn--top
-    │       │       ├── app__btn app__btn--add
-    │       │       ├── app__btn app__btn--menu
-    │       │       └── app__btn app__btn--audio
-    │       │
-    │       └── app__title-panel
-    │           └── app__title-bar
-    │               ├── app__btn app__btn--hashtag
-    │               ├── app__btn app__btn--current
-    │               ├── app__btn app__btn--edit
-    │               ├── app__btn app__btn--shuffle
-    │               ├── app__btn app__btn--repeat
-    │               └── app__btn app__btn--density
-    │
+    │   ├── app__menu-panel
+    │   │   └── app__menu-bar
+    │   │       ├── app__btn app__btn--play (with task/state-modifier)
+    │   │       ├── app__btn app__btn--skip
+    │   │       ├── app__btn app__btn--top
+    │   │       ├── app__btn app__btn--add
+    │   │       ├── app__btn app__btn--menu
+    │   │       └── app__btn app__btn--audio
+    │   │
+    │   └── app__title-panel
+    │       └── app__title-bar
+    │           ├── app__btn app__btn--hashtag
+    │           ├── app__btn app__btn--current
+    │           ├── app__btn app__btn--edit
+    │           ├── app__btn app__btn--shuffle
+    │           ├── app__btn app__btn--repeat
+    │           └── app__btn app__btn--density
+    |
     ├── app__playlist
     │   └── app__playlist-card
     │       └── app__playlist-list

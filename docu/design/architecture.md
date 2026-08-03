@@ -252,3 +252,25 @@ We use ESM modules and break down the project into smaller tasks using a Work Br
 ## Git tag history
 
 - Git tags are used to mark major development milestones.
+
+## Component layout - BEM and SSOT
+
+- BEM (Block, Element, and Modifier)
+- SSOT (Single Source of Truth)
+
+BEM
+
+- Block: A standalone parent component (e.g., .card).
+- Element: A child part tied to the block, written with two underscores (e.g., .card__image).
+- Modifier: A flag changing look or state, written with two hyphens (e.g., .card--light).
+
+  This project is a "hardcore" implementation of BEM. We use the "stylelint" npm package.
+
+SSOT
+
+- A piece of data or design logic exists in exactly one place
+
+The component file is the single source of truth for a UI element's structure and logic.<br>
+Vite natively supports CSS Modules (files ending in ".module.css").
+
+This completely automates the SSOT concept for our UI. Vite assembles CSS modules in the bundle.
