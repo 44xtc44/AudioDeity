@@ -14,7 +14,7 @@ export async function appContainer(): Promise<boolean> {
   appBox.classList.add('app__container');
   app.appendChild(appBox);
 
-  for await (const name of gridMember) {
+  for (const name of gridMember) {
     const div = document.createElement('div') as HTMLDivElement;
     div.id = name;
     div.classList.add(name);
