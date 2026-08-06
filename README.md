@@ -15,7 +15,7 @@ if (isStackBlitz) {
 }
 -->
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/~/github.com/44xtc44/AudioDeity) &emsp; prototype-v1
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/~/github.com/44xtc44/AudioDeity) &emsp; prototype-v2
 
 - **Browser add-on TypeScript project**
 - **Vite framework (vanilla-ts template)**<br>
