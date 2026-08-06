@@ -1,0 +1,15 @@
+{
+  "plugins": ["jsdoc"],
+  "rules": {
+    "jsdoc/require-jsdoc": [
+      "error",
+      {
+        "require": {
+          "FunctionDeclaration": true,
+          "ClassDeclaration": true,
+          "MethodDefinition": true
+        }
+      }
+    ]
+  }
+}

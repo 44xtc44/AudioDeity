@@ -38,5 +38,9 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"]
+  "include": ["src/**/*"],
+
+  /* Typedoc */
+  "excludeNotDocumented": true,
+  "exclude": ["node_modules", "build", "dist"]
 }

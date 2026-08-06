@@ -3,9 +3,11 @@ import globals from 'globals';
 import pluginJs from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import eslintConfigPrettier from 'eslint-config-prettier';
+import { defineConfig, globalIgnores } from 'eslint/config';
 
 export default [
   // Globales Ignorieren als allererster Eintrag (ohne 'files'-Schlüssel)
+  globalIgnores(['build/**/*', '**/docs/**']), // Ignores all contents in build directories
   {
     ignores: [
       'node_modules/',

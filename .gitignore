@@ -3,6 +3,7 @@
 
 temp/
 public/
+docs/
 ### allow only design ###
 **/docu/*
 !**docu/design/
