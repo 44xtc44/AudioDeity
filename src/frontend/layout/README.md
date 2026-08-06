@@ -8,18 +8,18 @@ Das Hauptlayout wird über ein 3-stufiges CSS-Grid gesteuert. Das `app__bottom-s
 
 ```text
 +-------------------------------------------------------+
-
-| 📱 app__container (Grid Parent)                        |
+|                                                       |
+| 📱 app__container (Grid Parent)                       |
 |  +-------------------------------------------------+  |
-|  | [1] app__header (Grid Child)                     |  |
+|  | [1] app__header (Grid Child)                    |  |
 |  +-------------------------------------------------+  |
-|  | [2] app__controls (Grid Child)                    |  |
+|  | [2] app__controls (Grid Child)                  |  |
 |  +-------------------------------------------------+  |
-|  | [3] app__playlist (Grid Child)                   |  |
+|  | [3] app__playlist (Grid Child)                  |  |
 |  +-------------------------------------------------+  |
 +-------------------------------------------------------+
 
-| 🟢 app__bottom-sheet (Fixed Overlay / z-index)             |
+| 🟢 app__bottom-sheet (Fixed Overlay / z-index)        |
 +-------------------------------------------------------+
 ```
 

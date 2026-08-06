@@ -6,3 +6,4 @@
 {"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qgit add\\E$"}
 {"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qplaywright.config.ts\\E$"}
 {"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QVite natively supports CSS Modules (files ending in .module.css or .module.scss).\\E$"}
+{"rule":"WHITESPACE_RULE","sentence":"^\\QOpen in StackBlitz   Tag: prototype-v1\\E$"}

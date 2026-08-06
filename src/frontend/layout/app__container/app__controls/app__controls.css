@@ -1,0 +1,28 @@
+/**
+ * @layout Button Container (Grid Parent)
+ * @parent .app__controls (Grid Child)
+ * @child .app__menu-panel, .title-container
+ * 
+ * @type CSS Grid (Vertical)
+ * @behavior Stapelt Menü- und Titelzeile untereinander mit festem Abstand.
+ */
+.app__controls {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md, 1rem);
+  padding: 1rem;
+  box-sizing: border-box;
+
+  background-image: linear-gradient(
+    to bottom,
+    rgba(77, 6, 7, 1),
+    rgba(18, 18, 18, 1)
+  );
+}
+
+.app__title-panel {
+  grid-template-columns: auto 1fr auto auto auto auto;
+  gap: var(--spacing-sm, 0.5rem);
+  align-items: center;
+}

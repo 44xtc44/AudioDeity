@@ -6,6 +6,10 @@
 - [→ Design](./design.md) bridges the gap, detailing how specific components are structured internally.
 - [→ Implementation](./implementation.md) is the execution of these designs, where the abstract models are translated into functional code.
 
+## Layout
+
+link to GRID-SYSTEM.md
+
 ## Implementation order to MVP
 
 Prototype is non-functional without optimizations and sophisticated algorithms.<br>
@@ -93,23 +97,26 @@ app (global main component) directory mirror /src/frontend/layout/
     │       └── app__header-overlay
     │
     ├── app__controls
-    │   ├── app__menu-panel
-    │   │   └── app__menu-bar
-    │   │       ├── app__btn app__btn--play (with task/state-modifier)
-    │   │       ├── app__btn app__btn--skip
-    │   │       ├── app__btn app__btn--top
-    │   │       ├── app__btn app__btn--add
-    │   │       ├── app__btn app__btn--menu
-    │   │       └── app__btn app__btn--audio
+    │   |─── app__menu-bar
+    │   |    └── app__menu-play
+    │   |    |   ├── app__btn app__btn--play (with task/state-modifier)
+    │   |    |   └── app__btn app__btn--skip
+    |   |    |
+    │   |    ├── app__menu-playlist
+    │   |    │   ├── app__btn app__btn--add
+    │   |    │   └── app__btn app__btn--menu
+    |   |    |
+    │   |    └── app__menu-service
+    │   │        ├── app__btn app__btn--audio
+    │   │        └── app__btn app__btn--info
     │   │
-    │   └── app__title-panel
-    │       └── app__title-bar
-    │           ├── app__btn app__btn--hashtag
-    │           ├── app__btn app__btn--current
-    │           ├── app__btn app__btn--edit
-    │           ├── app__btn app__btn--shuffle
-    │           ├── app__btn app__btn--repeat
-    │           └── app__btn app__btn--density
+    │   └── app__title-bar
+    │       ├── app__btn app__btn--hashtag
+    │       ├── app__btn app__btn--current
+    │       ├── app__btn app__btn--edit
+    │       ├── app__btn app__btn--shuffle
+    │       ├── app__btn app__btn--repeat
+    │       └── app__btn app__btn--density
     |
     ├── app__playlist
     │   └── app__playlist-card
@@ -125,7 +132,9 @@ app (global main component) directory mirror /src/frontend/layout/
 ### Key Directories
 
 - `./src/backend/` server loads the app if NPM package is on 'npmjs.com'
-
+- `./src/frontend/types/` TypeScript types and Interfaces
+- `./src/frontend/utils/` helper modules for all components, i.e. button creator
+- `./src/frontend/pre_init/` fail before 'init_app()', check DB, private mode, ...
 - `./src/frontend/layout/` root of the component layout tree
 - `./src/frontend/layout/app__header/` layer (z-index); image(1), two canvas(2)(3), overlay(4)
 - `./src/frontend/layout/app__controls/` buttons arranged in two grids
@@ -200,6 +209,7 @@ git reset # removes files from staging
 
 ```Bash
 git add .
-git commit -m "foo bar" # fire
+git commit -m "foo bar" # fire/OMG forgot prettier --write
 git reset --soft HEAD~1 # reset to one commit before AND unstages files; no files deleted
+git reset # removes files from staging
 ```

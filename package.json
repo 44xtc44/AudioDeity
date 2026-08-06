@@ -12,12 +12,16 @@
     "build:extension": "cross-env BUILD_TARGET=extension vite build",
     "build:all": "npm run build:npm && npm run build:extension",
     "lint": "eslint . --ignore-pattern '**/bundle/**'",
+    "prettier": "prettier --write .",
     "prepare": "husky",
     "test": "playwright test",
     "test:unit": "playwright test --grep @unit",
-    "test:e2e": "playwright test --grep @e2e"
+    "test:e2e": "playwright test --grep @e2e",
+    "type-check": "tsc --noEmit"
   },
   "devDependencies": {
+    "@commitlint/cli": "^21.2.1",
+    "@commitlint/config-conventional": "^21.2.0",
     "@eslint/js": "^10.0.1",
     "@playwright/test": "^1.61.1",
     "@types/node": "^26.1.1",

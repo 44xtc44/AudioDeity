@@ -34,7 +34,8 @@ jobs:
         run: npm run lint
 
       - name: Run dependency security audit # should only run on [main]
-        run: npm audit --audit-level=high   # make two files ci_push.yml, ci_pull_request.yml
+        run: npm audit --audit-level=high # make two files ci_push.yml, ci_pull_request.yml
+
 
       # above runs 20 seconds
       # - name: Run unit tests # we should run only those (2000sec/month free)

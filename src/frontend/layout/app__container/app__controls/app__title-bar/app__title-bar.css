@@ -1,0 +1,24 @@
+.app__title-bar {
+  display: grid;
+  /* #, title, repeat, shuffle,  list dimensions, icons 40rem max */
+  grid-template-columns: 2% 80% auto auto auto 1fr;
+
+  place-items: center;
+  width: 100%;
+  margin-bottom: -12px;
+
+  background-color: #1f0f0f;
+  box-shadow:
+    0px 5px 10px rgba(0, 0, 0, 0.3),
+    0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* SVG Scaling Rules. 
+ * See "buttonSVGs.ts" for class. 
+*/
+.app__title-bar-icon {
+  width: 100%;
+  height: auto;
+  max-width: 22px; /* Limits size on desktop */
+  min-width: 20px; /* Prevents it looking too small on mobile */
+}
