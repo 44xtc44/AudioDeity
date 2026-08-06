@@ -7,7 +7,7 @@ import { defineConfig, globalIgnores } from 'eslint/config';
 
 export default [
   // Globales Ignorieren als allererster Eintrag (ohne 'files'-Schlüssel)
-  globalIgnores(['build/**/*', '**/docs/**']), // Ignores all contents in build directories
+  globalIgnores(['build/**/*', 'docs/**', 'docu/**']), // Ignores all contents in build directories
   {
     ignores: [
       'node_modules/',

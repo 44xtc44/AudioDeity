@@ -13,6 +13,7 @@
     "build:extension": "cross-env BUILD_TARGET=extension vite build",
     "build:all": "npm run build:npm && npm run build:extension",
     "lint": "eslint . --ignore-pattern '**/bundle/**'",
+    "lint:debug": "cross-env TIMING=1 eslint .",
     "prettier": "prettier --write .",
     "prepare": "husky",
     "test": "playwright test",
@@ -43,10 +44,5 @@
   "lint-staged": {
     "*.{js,ts,jsx,tsx,json,css,md}": "prettier --write",
     "*.{js,ts,jsx,tsx}": "eslint --fix"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }
