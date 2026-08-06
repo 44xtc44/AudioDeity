@@ -4,3 +4,6 @@
 {"rule":"ARROWS","sentence":"^\\Q┗ 📂 tracks            --> Stores the actual File Blobs, decoupled from playlists.\\E$"}
 {"rule":"ID_CASING","sentence":"^\\QThis allows the user to alter the playlist name later { id:UUID, name: foo }.\\E$"}
 {"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qgit add\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qplaywright.config.ts\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QVite natively supports CSS Modules (files ending in .module.css or .module.scss).\\E$"}
+{"rule":"WHITESPACE_RULE","sentence":"^\\QOpen in StackBlitz   Tag: prototype-v1\\E$"}

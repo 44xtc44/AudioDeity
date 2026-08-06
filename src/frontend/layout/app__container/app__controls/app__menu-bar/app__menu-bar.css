@@ -1,0 +1,32 @@
+.app__menu-bar {
+  display: grid;
+  /* #, title, repeat, shuffle,  list dimensions, icons 40rem max 20% 10% 10% 20% 10% auto */
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.2rem;
+  place-items: center;
+}
+
+/* Flex - skip button tooltip not working, workaround. */
+.app__menu-play {
+  display: flex; /* establish flex container */
+  flex-direction: row; /* make main axis vertical */
+  justify-content: center; /* center items vertically, in this case */
+  align-items: center; /* center items horizontally, in this case */
+  gap: min(1.2rem, 2rem, 1.4rem);
+}
+
+#app__btn--play svg {
+  transform: scale(1.4);
+}
+
+.app__menu-playlist {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+}
+
+.app__menu-service {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+}

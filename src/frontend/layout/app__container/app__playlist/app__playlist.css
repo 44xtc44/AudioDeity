@@ -1,0 +1,124 @@
+.app__playlist {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr);
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.app__playlist-card {
+  height: 100%;
+  max-height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.app__playlist-list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 100%;
+  min-height: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto; /* scroll here only */
+  scroll-behavior: smooth;
+  margin: 0;
+  -webkit-overflow-scrolling: touch; /* mobile [OPTION] [TEST] no scroll bar */
+}
+
+/* ==========================================================================
+   DESIGN A: STANDARD-VIEW LIST (big / Desktop)
+   ========================================================================== */
+.app__playlist-item-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 6px 5px; /* Großzügiger Abstand */
+  /* background-color: #dc2626; */
+  border-radius: 4px;
+  flex-shrink: 0;
+
+  align-items: center;
+  max-width: 99%; /* [TEST] "width: 100%" horizontal bar appears */
+}
+
+.app__playlist-item {
+  margin: 0 !important;
+  position: relative;
+  z-index: 2;
+  background: #181818;
+  padding: 10px 12px; /* much space for mouse clicks */
+  transition: transform 0.2s ease-out;
+  cursor: grab;
+  width: 100%;
+  box-sizing: border-box;
+  color: var(--app__playlist-item);
+
+  line-height: 1.25;
+  display: -webkit-box; /* [TEST] line two is fully displayed */
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4; /* Number of lines to show */
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  /*   box-shadow: 
+    0 0 10px rgba(100, 150, 255, 0.5),
+    outset 0 0 5px rgba(100, 150, 255, 0.3);
+  background-color: rgba(20, 20, 30, 0.8);  */
+
+  /*   box-shadow: 
+    0 0 10px rgba(100, 150, 255, 0.5), 
+    inset 0 0 5px rgba(100, 150, 255, 0.3);
+  background-color: rgba(20, 20, 30, 0.8);  */
+}
+@media (prefers-color-scheme: dark) {
+  .app__playlist-item {
+    color: var(--app__playlist-item);
+  }
+}
+.app__playlist-item h4 {
+  font-size: 1rem;
+  margin: 0 0 4px 0;
+}
+
+.app__playlist-item p {
+  font-size: 0.85rem;
+  margin: 0;
+  color: #6b7280;
+}
+
+/* ==========================================================================
+   DESIGN B: COMPACT LIST (toggle via .is-compact)
+   ========================================================================== */
+/* Wenn die Klasse am .app__playlist-list aktiv ist, greifen diese kompakteren Regeln */
+.app__playlist-list.is-compact .app__playlist-item-wrapper {
+  margin: 2px 4px; /* Extrem flach */
+  border-radius: 3px;
+}
+
+.app__playlist-list.is-compact .app__playlist-item {
+  padding: 4px 8px; /* Minimales Padding */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.app__playlist-list.is-compact .app__playlist-item h4 {
+  font-size: 0.85rem;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+}
+
+.app__playlist-list.is-compact .app__playlist-item p {
+  font-size: 0.75rem;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: right;
+}

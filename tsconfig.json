@@ -6,13 +6,31 @@
     "types": ["vite/client"],
     "allowArbitraryExtensions": true,
     "skipLibCheck": true,
+    "outDir": "outdir" /* debugger, outdir dir must be there */,
+    /* path shortener */
+    "ignoreDeprecations": "6.0" /* future TS 7.0, silence "baseUrl" error */,
+    "baseUrl": ".",
+    "paths": {
+      "@state/*": ["src/frontend/state/*"],
+      "@layout/*": ["src/frontend/layout/*"],
+      "@controls/*": ["src/frontend/layout/app__container/app_controls/*"],
+      "@header/*": ["src/frontend/layout/app__container/app_header/*"],
+      "@playlist/*": ["src/frontend/layout/app__container/app_playlist/*"],
+      "@bottomSheet/*": [
+        "src/frontend/layout/app__container/app__bottom-sheet/*"
+      ],
+      "@core/*": ["src/core/*"],
+      "@tsTypes/*": ["src/frontend/layout/app__container/types/*"],
+      "@utils/*": ["src/frontend/layout/app__container/utils/*"]
+    },
 
     /* Bundler mode */
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
+    "allowImportingTsExtensions": true /* import type {<Interface or Type>} from './path' */,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
     "noEmit": true,
+    "sourceMap": true /* FireFox add-on Devs can check the app */,
 
     /* Linting */
     "noUnusedLocals": true,

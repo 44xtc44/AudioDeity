@@ -6,6 +6,10 @@ on:
   push:
     branches: [main, dev]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true # if push again while a old build is running
+
 jobs:
   lint-and-test:
     runs-on: ubuntu-latest
@@ -29,9 +33,11 @@ jobs:
       - name: Lint code (ESLint)
         run: npm run lint
 
-      # 🛡️ NEW: Automated Security Scan Step
-      - name: Run dependency security audit
-        run: npm audit --audit-level=high
+      - name: Run dependency security audit # should only run on [main]
+        run: npm audit --audit-level=high # make two files ci_push.yml, ci_pull_request.yml
 
-      # - name: Run unit tests
-      #   run: npm test
+
+      # above runs 20 seconds
+      # - name: Run unit tests # we should run only those (2000sec/month free)
+      #   run: npm test:unit # or
+      #   run: npm test:e2e

@@ -1,8 +1,0 @@
-.app__menu-bar {
-  display: grid;
-  /* #, title, repeat, shuffle,  list dimensions, icons 40rem max 20% 10% 10% 20% 10% auto */
-  grid-template-columns: auto auto 5% auto 15% auto 1fr;
-  gap: 1rem;
-
-  place-items: center;
-}

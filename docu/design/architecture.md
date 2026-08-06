@@ -1,3 +1,9 @@
+---
+version: 0.1
+name: AudioDeity
+description: A clean, userfriendly Browser app.
+---
+
 # Project architecture
 
 [↑ Go back to README.md](../../README.md)
@@ -8,7 +14,7 @@
 
 ## Audience
 
-The primary audience will be FireFox **mobile** browser add-on users.
+Primary audience will be FireFox **mobile** browser add-on users.
 
 ## Product
 
@@ -111,11 +117,6 @@ graph TD
 
 ## Directory and layout
 
-Core and service module are located under `/src/frontend/`.<br>
-The `/src/frontend/layout/` directory is a mirror of the **component layout tree**.
-
-The `/tests/src/frontend/` mirrors `/src/frontend/`.
-
 **Layout tree** and **key directories** are depicted in the [→ design document](./design.md).
 
 ## Documentation
@@ -146,8 +147,8 @@ We use ESM modules and break down the project into smaller tasks using a Work Br
 ### Prototype
 
 - **Prototype is non-functional** with layout mocks.
-- **"Responsive Design Mode"** perfect fits all available devices
-- **"Rotate viewport"** (landscape) leads to the collapse of the header on small displays, showing only button bar and playlist
+- **Responsive Design Mode** perfect fits all available devices
+- **Rotate viewport** (landscape) leads to the collapse of the header on small displays, showing only button bar and playlist
 - **System Hardware** light/dark-mode change leads to UI response
 
 ### MVP - Minimum Viable Product
@@ -179,3 +180,25 @@ We use ESM modules and break down the project into smaller tasks using a Work Br
 ## Git tag history
 
 - Git tags are used to mark major development milestones.
+
+## Component layout - BEM and SSOT
+
+- BEM (Block, Element, and Modifier)
+- SSOT (Single Source of Truth)
+
+BEM (Our component layout structure)
+
+- Block: A standalone parent component (e.g., .card).
+- Element: A child part tied to the block, written with two underscores (e.g., .card__image).
+- Modifier: A flag changing look or state, written with two hyphens (e.g., .card--light).
+
+This project is a **hardcore implementation of BEM**. We use the **stylelint** npm package.
+
+SSOT
+
+- A piece of data or design logic exists in exactly one place
+
+The component file is the single source of truth for a UI element's structure and logic.<br>
+Vite natively supports CSS Modules (files ending in ".module.css").
+
+This completely automates the SSOT concept for our UI. Vite assembles CSS modules in the bundle.
