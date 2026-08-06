@@ -11,24 +11,24 @@ export default defineConfig({
       ),
       '@header': path.resolve(
         __dirname,
-        './src/frontend/layout/app__container/app_header/',
+        './src/frontend/layout/app__container/app_header',
       ),
       '@playlist': path.resolve(
         __dirname,
-        './src/frontend/layout/app__container/app_playlist/',
+        './src/frontend/layout/app__container/app_playlist',
       ),
       '@bottomSheet': path.resolve(
         __dirname,
-        './src/frontend/layout/app__container/app__bottom-sheet/',
+        './src/frontend/layout/app__container/app__bottom-sheet',
       ),
       '@core': path.resolve(__dirname, './src/core'),
       '@tsTypes': path.resolve(
         __dirname,
-        './src/frontend/layout/app__container/types/',
+        './src/frontend/layout/app__container/types',
       ),
       '@utils': path.resolve(
         __dirname,
-        './src/frontend/layout/app__container/utils/',
+        './src/frontend/layout/app__container/utils',
       ),
     },
   },
